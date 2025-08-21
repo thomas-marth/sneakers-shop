@@ -2,7 +2,7 @@
 import { createContext, useContext, useState } from "react";
 import axios from "axios";
 
-export const BASE_URL = "https://664623b951e227f23aadf146.mockapi.io";
+export const BASE_URL = "https://68808f35f1dcae717b62808d.mockapi.io";
 
 export const CartContext = createContext();
 
@@ -25,11 +25,11 @@ const CartProvider = ({ children }) => {
   const addToCart = async (item) => {
     try {
       const { data: product } = await axios.get(
-        `${BASE_URL}/productData/${item.id}`
+        `${BASE_URL}/Products/${item.id}`
       );
 
       if (product.quantity > 0) {
-        await axios.put(`${BASE_URL}/productData/${item.id}`, {
+        await axios.put(`${BASE_URL}/Products/${item.id}`, {
           ...product,
           quantity: product.quantity - 1,
         });
@@ -45,11 +45,9 @@ const CartProvider = ({ children }) => {
 
   const removeFromCart = async (id) => {
     try {
-      const { data: product } = await axios.get(
-        `${BASE_URL}/productData/${id}`
-      );
+      const { data: product } = await axios.get(`${BASE_URL}/Products/${id}`);
 
-      await axios.put(`${BASE_URL}/productData/${id}`, {
+      await axios.put(`${BASE_URL}/Products/${id}`, {
         ...product,
         quantity: product.quantity + 1,
       });

@@ -10,7 +10,7 @@ function Main() {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await axios.get(`${BASE_URL}/productData`);
+      const { data } = await axios.get(`${BASE_URL}/Products`);
 
       setProducts(data);
     } catch (error) {
