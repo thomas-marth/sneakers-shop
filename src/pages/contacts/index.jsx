@@ -1,7 +1,11 @@
-// import styles from "./styles.module.css";
+import styles from "./styles.module.css";
 
 function Contacts() {
-  return <h1>Contacts page</h1>;
+  return (
+    <div className={styles.contacts}>
+      <h1 className={styles.title}>Контакты</h1>
+    </div>
+  );
 }
 
 export default Contacts;

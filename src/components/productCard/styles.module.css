@@ -1,16 +1,66 @@
 .card {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 16px;
-  text-align: center;
+  position: relative;
+  width: 386px;
+  height: 393px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 42px;
+  padding: 39px;
   background-color: #fff;
-  transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 
-.card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transform: translateY(-4px);
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after,
+.card::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 4px;
+  border-radius: 42px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.card::before {
+  filter: blur(12px);
+  opacity: 0.5;
+}
+
+.card:hover::after,
+.card:hover::before {
+  background-image: conic-gradient(
+    from var(--angle),
+    transparent 70%,
+    #4862f5,
+    #d81111,
+    #cc0fd3,
+    #1135ff
+  );
+  animation: spin 1.9s linear infinite;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }
 
 .image {
@@ -18,18 +68,37 @@
   height: 180px;
   object-fit: contain;
   border-radius: 8px;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
 }
 
 .title {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #333;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 32px;
+  color: #000;
+}
+
+.priceWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .price {
-  font-size: 16px;
-  font-weight: bold;
-  color: #0070f3;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.priceLable {
+  color: #000;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.iconButton {
+  width: 37px;
+  height: 37px;
 }

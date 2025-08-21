@@ -25,7 +25,7 @@ function Main() {
   return (
     <main className={styles.main}>
       <img src={Banner} alt="Banner" className={styles.banner} />
-      <h1>Товары</h1>
+      <h1 className={styles.title}>Товары</h1>
       <div className={styles.productsGrid}>
         {products.map(({ id, name, image, price }) => (
           <ProductCard

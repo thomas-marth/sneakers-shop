@@ -3,7 +3,6 @@ import { createContext, useContext, useState } from "react";
 import axios from "axios";
 
 export const BASE_URL = "https://68808f35f1dcae717b62808d.mockapi.io";
-
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {

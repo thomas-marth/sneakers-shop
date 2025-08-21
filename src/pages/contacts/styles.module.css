@@ -1,0 +1,13 @@
+.contacts {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 37px;
+  margin-bottom: 45px;
+}
