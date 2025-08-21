@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
@@ -30,13 +31,8 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  const removeFromCart = async (id) => {
-    try {
-      await axios.delete(`${BASE_URL}/cartData/${id}`);
-      setCartItems((prev) => prev.filter((item) => item.id !== id));
-    } catch (error) {
-      console.log("Error removing from cart:", error);
-    }
+  const removeFromCart = (id) => {
+    setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
   return (
