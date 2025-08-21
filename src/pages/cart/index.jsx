@@ -23,7 +23,7 @@ function Cart() {
               <CartCard key={item.id} product={item} />
             ))}
           </div>
-          <div>Total price: {totalPrice.toLocaleString("eu-EU")} Eur</div>
+          <div>Total price: {totalPrice.toLocaleString("eu-EU")} EUR</div>
         </>
       )}
     </div>
