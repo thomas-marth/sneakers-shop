@@ -4,7 +4,6 @@ import CartCard from "../../components/cartCard";
 
 function Cart() {
   const { cartItems } = useCart();
-  console.log(cartItems);
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + parseFloat(item.price),

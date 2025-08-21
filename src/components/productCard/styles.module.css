@@ -101,4 +101,9 @@
 .iconButton {
   width: 37px;
   height: 37px;
+  transition: all 0.2s ease;
+}
+
+.iconButton:hover {
+  transform: scale(1.1);
 }
