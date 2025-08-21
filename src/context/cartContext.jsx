@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import axios from "axios";
 
 export const BASE_URL = "https://68808f35f1dcae717b62808d.mockapi.io";
@@ -49,3 +49,5 @@ const CartProvider = ({ children }) => {
 };
 
 export default CartProvider;
+
+export const useCart = () => useContext(CartContext);

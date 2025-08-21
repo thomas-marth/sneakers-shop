@@ -28,7 +28,13 @@ function Main() {
       <h1>Товары</h1>
       <div className={styles.productsGrid}>
         {products.map(({ id, name, image, price }) => (
-          <ProductCard key={id} name={name} image={image} price={price} />
+          <ProductCard
+            key={id}
+            id={id}
+            name={name}
+            image={image}
+            price={price}
+          />
         ))}
       </div>
     </main>
