@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    background-color: #3B3C3D;
+    justify-content: space-between;
+    color: #fff;
+    padding: 43px 230px 38px 230px;
+    align-items: center;
+
+    nav {
+
+        display: flex;
+        gap: 64px;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+        }
+    }
+
+}
