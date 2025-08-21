@@ -14,7 +14,7 @@ function Main() {
 
       setProducts(data);
     } catch (error) {
-      console.error("Ошибка загрузки товаров:", error);
+      console.log("Ошибка загрузки товаров:", error);
     }
   };
 
