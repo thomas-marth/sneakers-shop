@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./styles.module.css";
 import Banner from "../../assets/Banner.png";
-import ProductCard from "../../components/ProductCard";
+import ProductCard from "../../components/productCard";
 import { BASE_URL } from "../../context/cartContext";
 
 function Main() {
@@ -11,7 +11,7 @@ function Main() {
   const fetchProducts = async () => {
     try {
       const { data } = await axios.get(`${BASE_URL}/productData`);
- 
+
       setProducts(data);
     } catch (error) {
       console.error("Ошибка загрузки товаров:", error);
