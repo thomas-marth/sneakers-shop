@@ -1,0 +1,78 @@
+.footer {
+  margin-top: auto;
+  background-color: #2f2f2f;
+  color: #fff;
+
+  .container {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 73px 15px 48px;
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 90px;
+  }
+
+  .contacts {
+    h3 {
+      color: #fff;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.23;
+      margin-bottom: 39px;
+    }
+
+    a {
+      display: block;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.23;
+    }
+
+    a[href="tel:88000000000"] {
+      margin-bottom: 10px;
+    }
+  }
+
+  .socials {
+    display: flex;
+    gap: 24px;
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.23;
+
+    input {
+      width: 260px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #bfbfbf;
+      padding-bottom: 15px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.23;
+      outline: none;
+
+      &::placeholder {
+        color: #bfbfbf;
+      }
+    }
+  }
+}

@@ -1,4 +1,7 @@
 .app {
- font-family: 'Montserrat';
+  font-family: "Montserrat";
   max-width: 1920px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
