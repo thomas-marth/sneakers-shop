@@ -1,4 +1,5 @@
 import { useCart } from "../../context/cartContext";
+import styles from "./styles.module.css";
 
 function CartCard({ product }) {
   const { removeFromCart } = useCart();
@@ -7,7 +8,11 @@ function CartCard({ product }) {
   };
   return (
     <div>
-      <img src={product.image} alt={product.name}></img>
+      <img
+        src={product.image}
+        alt={product.name}
+        className={styles.productImg}
+      ></img>
       <h3>{product.name}</h3>
       <div>
         Price:
