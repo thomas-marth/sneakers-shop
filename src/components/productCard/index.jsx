@@ -1,16 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCart } from "../../context/cartContext";
 import styles from "./styles.module.css";
 import BtnAdd from "../../assets/BtnAdd.png";
 import BtnAddBlack from "../../assets/BtnAddBlack.png";
 
 function ProductCard({ id, name, image, price }) {
+  const { addToCart, cartItems } = useCart();
   const [added, setAdded] = useState(false);
-  const { addToCart } = useCart();
+
+  useEffect(() => {
+    setAdded(cartItems.some((item) => item.id === id));
+  }, [cartItems, id]);
 
   const handleClick = () => {
     addToCart({ id, name, image, price });
-    setAdded(!added);
+    setAdded(true);
   };
 
   return (
