@@ -1,25 +1,31 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 
-export const BASE_URL = "https://68808f35f1dcae717b62808d.mockapi.io";
+export const BASE_URL = "https://6898bc99ddf05523e55fb2e9.mockapi.io";
+
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
+  useEffect(() => {
+    const fetchCartItems = async () => {
+      try {
+        const { data } = await axios.get(`${BASE_URL}/cartData`);
+        setCartItems(data);
+      } catch (error) {
+        console.log("Ошибка загрузки корзины:", error);
+      }
+    };
+
+    fetchCartItems();
+  }, []);
+
   const addToCart = async (item) => {
     try {
-      const { data } = await axios.get(`${BASE_URL}/Products/${item.id}`);
-      if (data.quantity > 0) {
-        await axios.put(`${BASE_URL}/Products/${item.id}`, {
-          ...data,
-          quantity: data.quantity - 1,
-        });
-        setCartItems((prev) => [...prev, item]);
-      } else {
-        console.log("Товара нет в наличии");
-      }
+      const { data } = axios.post(`${BASE_URL}/cartData`, item);
+      setCartItems((prev) => [...prev, data]);
     } catch (error) {
       console.log("Ошибка добавления товара в корзину:", error);
     }
@@ -27,13 +33,7 @@ const CartProvider = ({ children }) => {
 
   const removeFromCart = async (id) => {
     try {
-      const { data } = await axios.get(`${BASE_URL}/Products/${id}`);
-
-      await axios.put(`${BASE_URL}/Products/${id}`, {
-        ...data,
-        quantity: data.quantity + 1,
-      });
-
+      await axios.delete(`${BASE_URL}/cartData/${id}`);
       setCartItems((prev) => prev.filter((item) => item.id !== id));
     } catch (error) {
       console.log("Ошибка удаления товара из корзины:", error);
