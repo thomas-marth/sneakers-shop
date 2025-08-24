@@ -13,17 +13,29 @@ function Cart() {
   return (
     <div className={styles.cart}>
       <h1 className={styles.title}>Корзина</h1>
+
       {cartItems.length === 0 ? (
-        <p>Здесь пока ничего нет</p>
+        <p>Здесь пока ничего нет.</p>
       ) : (
-        <>
-          <div>
+        <div className={styles.cartContainer}>
+          <div className={styles.cartList}>
             {cartItems.map((item) => (
               <CartCard key={item.id} product={item} />
             ))}
           </div>
-          <div>Total price: {totalPrice.toLocaleString("eu-EU")} EUR</div>
-        </>
+          <div className={styles.summContainer}>
+            <h3 className={styles.summTitle}>Итого</h3>
+            <ul className={styles.summList}>
+              {cartItems.map((item) => (
+                <li key={item.id}>{item.name}</li>
+              ))}
+            </ul>
+            <p className={styles.totalPriceTitle}>Цена:</p>
+            <p className={styles.totalPrice}>
+              {totalPrice.toLocaleString("eu-EU")} €
+            </p>
+          </div>
+        </div>
       )}
     </div>
   );

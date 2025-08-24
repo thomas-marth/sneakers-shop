@@ -2,7 +2,23 @@
   max-width: 1450px;
   margin: 0 auto;
   padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cartContainer {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
   margin-bottom: 172px;
+}
+
+.cartList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .title {
@@ -11,4 +27,49 @@
   border-bottom: 1px solid #eaeaea;
   padding-bottom: 37px;
   margin-bottom: 45px;
+}
+
+.summContainer {
+  max-width: 388px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #fafafa;
+  padding: 26px 55px 43px 28px;
+}
+
+.summTitle {
+  color: #000;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 41px;
+}
+
+.summList {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 97.959%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  padding-bottom: 64px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 41px;
+}
+
+.totalPriceTitle {
+  color: #2d2d2d;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.totalPrice {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
 }

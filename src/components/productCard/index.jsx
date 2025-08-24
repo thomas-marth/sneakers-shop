@@ -5,16 +5,24 @@ import BtnAdd from "../../assets/BtnAdd.png";
 import BtnAddBlack from "../../assets/BtnAddBlack.png";
 
 function ProductCard({ id, name, image, price }) {
-  const { addToCart, cartItems } = useCart();
+  const { addToCart, removeFromCart, cartItems } = useCart();
   const [added, setAdded] = useState(false);
 
   useEffect(() => {
-    setAdded(cartItems.some((item) => item.id === id));
+    setAdded(cartItems.some((item) => (item.productId ?? item.id) === id));
   }, [cartItems, id]);
 
   const handleClick = () => {
-    addToCart({ id, name, image, price });
-    setAdded(true);
+    const existingItem = cartItems.find(
+      (item) => (item.productId ?? item.id) === id
+    );
+    if (existingItem) {
+      removeFromCart(existingItem.id);
+      setAdded(false);
+    } else {
+      addToCart({ productId: id, name, image, price });
+      setAdded(true);
+    }
   };
 
   return (
