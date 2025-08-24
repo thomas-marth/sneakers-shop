@@ -9,9 +9,17 @@
 
 .cartContainer {
   display: flex;
-  gap: 40px;
+  gap: 129px;
   align-items: flex-start;
   margin-bottom: 172px;
+}
+
+.cartMessage {
+  color: rgba(0, 0, 0, 0.7);
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .cartList {
@@ -34,7 +42,6 @@
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   background-color: #fafafa;
   padding: 26px 55px 43px 28px;
 }
@@ -44,14 +51,14 @@
   font-size: 36px;
   font-weight: 700;
   text-align: center;
-  padding-bottom: 41px;
+  margin-bottom: 42px;
 }
 
 .summList {
   color: rgba(0, 0, 0, 0.7);
   font-size: 24px;
   font-weight: 400;
-  line-height: 97.959%;
+  line-height: 1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   padding-bottom: 64px;
   margin-bottom: 15px;
@@ -65,7 +72,7 @@
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .totalPrice {

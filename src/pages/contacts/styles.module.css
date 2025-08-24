@@ -2,6 +2,7 @@
   max-width: 1450px;
   margin: 0 auto;
   padding: 0 15px;
+  margin-bottom: 172px;
 }
 
 .title {
@@ -10,4 +11,54 @@
   border-bottom: 1px solid #eaeaea;
   padding-bottom: 37px;
   margin-bottom: 45px;
+}
+
+.content {
+  display: flex;
+  gap: 79px;
+  align-items: flex-start;
+}
+
+.contactList {
+  min-width: 200px;
+  margin-bottom: 67px;
+}
+
+.contactList li {
+  font-family: Montserrat;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  font-weight: 400;
+  list-style: disc;
+  margin-left: 20px;
+  margin-bottom: 13px;
+  line-height: 1.23;
+}
+
+.socials {
+  background-color: #fafafa;
+  padding: 18px 65px 72px 65px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+  align-items: center;
+}
+
+.socialsTitle {
+  color: rgba(0, 0, 0, 0.7);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.23;
+}
+
+.icons {
+  display: flex;
+  gap: 24px;
+}
+
+.icons img {
+  width: 76px;
+  height: 76px;
 }

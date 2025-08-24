@@ -15,7 +15,9 @@ function Cart() {
       <h1 className={styles.title}>Корзина</h1>
 
       {cartItems.length === 0 ? (
-        <p>Здесь пока ничего нет.</p>
+        <div className={styles.cartContainer}>
+          <p className={styles.cartMessage}>Здесь пока ничего нет.</p>
+        </div>
       ) : (
         <div className={styles.cartContainer}>
           <div className={styles.cartList}>
