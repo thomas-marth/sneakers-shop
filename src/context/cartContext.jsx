@@ -24,7 +24,7 @@ const CartProvider = ({ children }) => {
 
   const addToCart = async (item) => {
     try {
-      const { data } = axios.post(`${BASE_URL}/cartData`, item);
+      const { data } = await axios.post(`${BASE_URL}/cartData`, item);
       setCartItems((prev) => [...prev, data]);
     } catch (error) {
       console.log("Ошибка добавления товара в корзину:", error);
